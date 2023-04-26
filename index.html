@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        /* Стиль для кнопки "Chat List" */
+        .chat-list-button {
+          background-color: #0077cc;
+          color: #fff;
+          padding: 10px 20px;
+          border-radius: 5px;
+          text-decoration: none;
+          display: inline-block;
+        }
+  
+        .chat-list-button:hover {
+          background-color: #005fa3;
+        }
+      </style>
+    </head>
+    <body>
+      <h1></h1>
+      <a href="zacon.html" class="chat-list-button">Правила</a>
+    <meta charset="UTF-8">
+    <title>Имя</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <script src="script.js"></script>
+    <div class="container">
+      <h1>Введите имя :</h1>
+      <input type="text" id="name-input">
+      <button onclick="redirectToChat()">Войти в чат</button>
+    </div>
+
+    <script>
+      function redirectToChat() {
+        const nameInput = document.getElementById("name-input").value;
+        if (nameInput) {
+          window.location.href = "chat.html?name=" + nameInput;
+        }
+      }
+    </script>
+  </body>
+</html>

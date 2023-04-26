@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Чат</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Добро пожаловать в чат, <span id="user-name"></span>!</h1>
+      <div id="user-list"></div>
+      <form onsubmit="sendMessage(); return false;">
+        <input type="text" id="message-input">
+        <button>Отправить</button>
+      </form>
+      <div id="message-list"></div>
+    </div>
+
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const userName = urlParams.get("name");
+
+      const userNameElement = document.getElementById("user-name");
+      userNameElement.textContent = userName;
+
+      function sendMessage() {
+        const messageInput = document.getElementById("message-input");
+        const messageList = document.getElementById("message-list");
+
+        const message = messageInput.value;
+        messageInput.value = "";
+
+        const messageElement = document.createElement("div");
+        messageElement.textContent = userName + ": " + message;
+
+        messageList.appendChild(messageElement);
+      }
+    </script>
+  </body>
+</html>
